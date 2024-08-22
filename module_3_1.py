@@ -5,6 +5,7 @@ def count_calls():
     calls += 1
     return calls
 def string_info(str):
+    count_calls()
     a = len(str)
     b = str.upper()
     c = str.lower()
@@ -12,6 +13,7 @@ def string_info(str):
     return print(info_tuple)
 
 def is_contains(a=str(),b = []):
+    count_calls()
     if a.lower() in (item.lower() for item in a):
         print('false')
     else: print('true')
