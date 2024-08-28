@@ -1,35 +1,40 @@
 calls = 0
 spisok_lis = ['Яблоко', 'двадцать', 'СолнЦе', 1, 10, 100, True]
+
+
 def count_calls():
     global calls
     calls += 1
     return calls
-def string_info(str):
+
+
+def string_info(stroka):
     count_calls()
-    a = len(str)
-    b = str.upper()
-    c = str.lower()
+    a = len(stroka)
+    b = stroka.upper()
+    c = stroka.lower()
     info_tuple = a, b, c
-    return print(info_tuple)
+    return info_tuple
 
-def is_contains(a=str(),b = []):
+
+def is_contains(a=str(), b=[]):
     count_calls()
-    if a.lower() in (item.lower() for item in a):
-        print('false')
-    else: print('true')
-   
-
+    if a.lower() in (str(item).lower() for item in b):
+        return True
+    else:
+        return False
 
 
 print('"это первое задание подсчет колличества вызовов функции"')
 print(count_calls(), count_calls(), count_calls())
 
 print('"это второе задание информация о введенной строке"')
-print('Введите вашу строку ') # string
+print('Введите вашу строку ')  # string
 string = str(input())
-string_info(string)
+print(string_info(string))
 
 print('"это третье задание "')
-print('Введите вашу строку ') # string
-str = str(input())
-is_contains(str, spisok_lis)
+print('Введите вашу строку ')  # string
+string2 = str(input())
+print(is_contains(string2, spisok_lis))
+print(count_calls())
